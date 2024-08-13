@@ -16,6 +16,10 @@ public class Class {
         this.teacher = teacher;
     }
 
+    public void addStudent(Student student){
+        this.studentList.add(student);
+    }
+
     public String getName() {
         return name;
     }
