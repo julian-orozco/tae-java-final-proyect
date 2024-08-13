@@ -30,6 +30,10 @@ public class University {
         this.studentList = studentList;
     }
 
+    public void addStudent(Student student){
+        this.studentList.add(student);
+    }
+
     public List<Classes> getClassList() {
         return classesList;
     }

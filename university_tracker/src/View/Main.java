@@ -86,6 +86,46 @@ public class Main {
 
                         }
                         break;
+
+                    case 3:
+                        String name;
+                        System.out.println("\nEnter the student's name:");
+                        name = sc.next();
+
+                        int id;
+                        System.out.println("Enter the student's id:");
+                        id = sc.nextInt();
+
+                        if (Student.ids.contains(id)){
+
+                            System.out.println("Sorry there is already a student with that id");
+                            break;
+
+                        }else {
+
+                            int age;
+                            System.out.println("Enter the student's age:");
+                            age = sc.nextInt();
+
+                            Student st = new Student(name, id, age);
+
+                            int ind2 = 1;
+
+                            for (Classes c : university.getClassList()) {
+                                System.out.printf("\n--- Class %d ---%n", ind2);
+                                System.out.println(c.getName());
+                                ind2++;
+                            }
+
+                            int clas;
+                            System.out.println("Enter the number of the class the student will be part of:");
+                            clas = sc.nextInt();
+
+                            university.getClassList().get(clas - 1).addStudent(st);
+                            university.addStudent(st);
+
+                            break;
+                        }
                     
                 }
             }
