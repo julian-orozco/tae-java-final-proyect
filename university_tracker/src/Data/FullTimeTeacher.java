@@ -5,7 +5,7 @@ public class FullTimeTeacher extends Teacher {
     private int yearsOfExperience;
 
     public FullTimeTeacher(String name, Double baseSalary, int yearsOfExperience){
-        super(name, baseSalary * yearsOfExperience);
+        super(name, baseSalary * (1.1 * yearsOfExperience));
         this.baseSalary = baseSalary;
         this.yearsOfExperience = yearsOfExperience;
     }
