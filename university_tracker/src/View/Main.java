@@ -126,7 +126,31 @@ public class Main {
 
                             break;
                         }
-                    
+
+                    case 4:
+                        break;
+
+                    case 5:
+
+                        System.out.println("--- List of students ---");
+                        for (Student s: university.getStudentList()){
+                            System.out.println(s);
+                        }
+
+                        int studentId;
+                        System.out.println("\nEnter the id of the student you want to search");
+                        studentId = sc.nextInt();
+
+                        for (Classes c : university.getClassList()){
+                            for (Student s: c.getStudentList()){
+                                if(s.getId() == studentId){
+                                    System.out.printf("The student belongs to class %s\n", c.getName());
+                                    break;
+                                }
+                            }
+                        }
+                        break;
+
                 }
             }
         } while (opc != 6);
