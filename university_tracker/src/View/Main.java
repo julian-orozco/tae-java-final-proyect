@@ -46,6 +46,47 @@ public class Main {
                         }
                         break;
 
+                    case 2:
+                        int ind = 1;
+
+                        for (Classes c : university.getClassList()) {
+                            System.out.printf("\n--- Class %d ---%n", ind);
+                            System.out.println(c.getName());
+                            ind++;
+                        }
+
+                        int opc2 = 0;
+
+                        System.out.println("""
+                                \nPlease select an option:
+                                1. Print data from a class
+                                2. Go back to main menu""");
+
+                        try {
+                            opc2 = sc.nextInt();
+                        } catch (Exception e) {
+                            sc.next();
+                        }
+
+                        switch (opc2) {
+
+                            case 1:
+                                int opc3 = 0;
+                                System.out.println("Enter the number of the class you want to get more information about");
+                                try {
+                                    opc3 = sc.nextInt();
+                                } catch (Exception e) {
+                                    sc.next();
+                                }
+                                System.out.println(university.getClassList().get(opc3 - 1));
+                                break;
+
+                            case 2:
+                                break;
+
+                        }
+                        break;
+                    
                 }
             }
         } while (opc != 6);

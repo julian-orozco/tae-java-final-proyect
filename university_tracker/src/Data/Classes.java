@@ -66,6 +66,6 @@ public class Classes {
                 Assigned classroom: %s
                 Teacher: %s
                 Students:
-                %s""", this.getName(), this.getClassroom(), teacher, students);
+                %s\n""", this.getName(), this.getClassroom(), teacher, students);
     }
 }
