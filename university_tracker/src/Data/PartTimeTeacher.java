@@ -28,6 +28,6 @@ public class PartTimeTeacher extends Teacher{
 
     @Override
     public String toString() {
-        return String.format("Name: %s - Base salary: %.2f - Active hours per week: %d - Salary: %.2f", this.getName(), this.getBaseSalary(), this.getActiveHoursWeek(), this.getSalary());
+        return String.format("Part time teacher:\nName: %s - Base salary: %.2f - Active hours per week: %d - Salary: %.2f\n", this.getName(), this.getBaseSalary(), this.getActiveHoursWeek(), this.getSalary());
     }
 }

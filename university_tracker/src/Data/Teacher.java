@@ -9,7 +9,6 @@ public class Teacher {
         this.salary = salary;
     }
 
-
     public String getName() {
         return name;
     }

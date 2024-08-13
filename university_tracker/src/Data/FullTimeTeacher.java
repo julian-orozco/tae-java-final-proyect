@@ -28,7 +28,7 @@ public class FullTimeTeacher extends Teacher {
 
     @Override
     public String toString() {
-        return String.format("Name: %s - Base salary: %.2f - Years of experience: %d - Salary: %.2f", this.getName(), this.getBaseSalary(), this.getYearsOfExperience(), this.getSalary());
+        return String.format("Full-Time teacher:\nName: %s - Base salary: %.2f - Years of experience: %d - Salary: %.2f\n", this.getName(), this.getBaseSalary(), this.getYearsOfExperience(), this.getSalary());
     }
 }
 
