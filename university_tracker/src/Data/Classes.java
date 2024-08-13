@@ -3,13 +3,13 @@ package Data;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class {
+public class Classes {
     private String name;
     private String classroom;
     private List<Student> studentList = new ArrayList<>();
     private Teacher teacher;
 
-    public Class(String name, String classroom, List<Student> studentList, Teacher teacher){
+    public Classes(String name, String classroom, List<Student> studentList, Teacher teacher){
         this.name = name;
         this.classroom = classroom;
         this.studentList = studentList;

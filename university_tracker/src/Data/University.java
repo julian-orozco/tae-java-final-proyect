@@ -6,12 +6,12 @@ import java.util.List;
 public class University {
     private  List<Teacher> teacherList = new ArrayList<>();
     private List<Student> studentList = new ArrayList<>();
-    private List<Class> classList = new ArrayList<>();
+    private List<Classes> classesList = new ArrayList<>();
 
-    public University(List<Teacher> teacherList, List<Student> studentList, List<Class> classList ){
+    public University(List<Teacher> teacherList, List<Student> studentList, List<Classes> classesList){
         this.teacherList = teacherList;
         this.studentList = studentList;
-        this.classList = classList;
+        this.classesList = classesList;
     }
 
     public List<Teacher> getTeacherList() {
@@ -30,11 +30,11 @@ public class University {
         this.studentList = studentList;
     }
 
-    public List<Class> getClassList() {
-        return classList;
+    public List<Classes> getClassList() {
+        return classesList;
     }
 
-    public void setClassList(List<Class> classList) {
-        this.classList = classList;
+    public void setClassList(List<Classes> classesList) {
+        this.classesList = classesList;
     }
 }
