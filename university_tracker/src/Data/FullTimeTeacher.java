@@ -25,5 +25,10 @@ public class FullTimeTeacher extends Teacher {
     public void setYearsOfExperience(int yearsOfExperience) {
         this.yearsOfExperience = yearsOfExperience;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Name: %s - Base salary: %.2f - Years of experience: %d - Salary: %.2f", this.getName(), this.getBaseSalary(), this.getYearsOfExperience(), this.getSalary());
+    }
 }
 

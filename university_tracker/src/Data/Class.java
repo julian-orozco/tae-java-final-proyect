@@ -47,4 +47,21 @@ public class Class {
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
+
+    @Override
+    public String toString() {
+        String students = "";
+        String teacher = this.getTeacher().toString();
+
+        for (Student s: this.getStudentList()){
+            students = students.concat(s.toString() + "\n");
+        }
+
+        return String.format("""
+                Name: %s
+                Assigned classroom: %s
+                Teacher: %s
+                Students:
+                %s""", this.getName(), this.getClassroom(), teacher, students);
+    }
 }

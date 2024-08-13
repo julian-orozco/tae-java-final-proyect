@@ -34,4 +34,9 @@ public class Student {
     public void setAge(int age) {
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Name: %s - Id: %d - Age: %d", this.getName(), this.getId(), this.getAge());
+    }
 }

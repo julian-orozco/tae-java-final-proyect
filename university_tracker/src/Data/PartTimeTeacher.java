@@ -25,4 +25,9 @@ public class PartTimeTeacher extends Teacher{
     public void setActiveHoursWeek(int activeHoursWeek) {
         this.activeHoursWeek = activeHoursWeek;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Name: %s - Base salary: %.2f - Active hours per week: %d - Salary: %.2f", this.getName(), this.getBaseSalary(), this.getActiveHoursWeek(), this.getSalary());
+    }
 }
