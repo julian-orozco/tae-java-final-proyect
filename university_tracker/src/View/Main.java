@@ -14,7 +14,7 @@ public class Main {
 
     public static void menu(University university) {
         Scanner sc = new Scanner(System.in);
-        int opc = 0;
+        int opc;
 
         System.out.println("Welcome to your University tracker system!");
 
@@ -99,7 +99,6 @@ public class Main {
                         if (Student.ids.contains(id)){
 
                             System.out.println("Sorry there is already a student with that id");
-                            break;
 
                         }else {
 
@@ -124,10 +123,73 @@ public class Main {
                             university.getClassList().get(clas - 1).addStudent(st);
                             university.addStudent(st);
 
-                            break;
                         }
+                        break;
 
                     case 4:
+                        String className;
+                        boolean valid = true;
+
+                        System.out.println("Enter the name of the class you want to create");
+                        className = sc.next();
+
+                        for (Classes c: university.getClassList()){
+                            if (c.getName().equals(className)){
+                                System.out.println("Sorry there is already a class that have that name");
+                                valid = false;
+                                break; //stop searching because it's an invalid name
+                            }
+                        }
+
+                        if (!valid){break;}
+
+                        String classroom;
+
+                        System.out.println("Enter the classroom where the class will take place");
+                        classroom = sc.next();
+
+                        System.out.println("--- Teachers list ---");
+                        int index = 1;
+                        for (Teacher teacher: university.getTeacherList()){
+                            System.out.printf("--- Teacher %d ---", index);
+                            System.out.println(teacher);
+                            index++;
+                        }
+
+                        System.out.println("Enter the number of the teacher corresponding to the class");
+                        int idTeacher;
+                        idTeacher = sc.nextInt();
+                        Teacher teacher = university.getTeacherList().get(idTeacher - 1);
+
+                        System.out.println("--- List of students ---");
+                        for (Student s: university.getStudentList()){
+                            System.out.println(s);
+                        }
+
+                        System.out.println("How many students do you want to include in the class?");
+                        int studentsQuantity;
+                        studentsQuantity = sc.nextInt();
+
+                        List<Student> studentList = new ArrayList<>();
+
+                        System.out.println("Please introduce the id for " + String.valueOf(studentsQuantity) + " students one by one");
+                        int stId;
+
+                        for (int i = 0; i < studentsQuantity; i++){
+                            stId = sc.nextInt();
+
+                            for (Student s: university.getStudentList()){
+                                if (stId == s.getId()){
+                                    studentList.add(s);
+                                }
+                            }
+                        }
+
+                        Classes newClass = new Classes(className, classroom, studentList, teacher);
+                        university.addClass(newClass);
+
+                        System.out.println("Great! You have added the class:");
+                        System.out.println(newClass);
                         break;
 
                     case 5:
@@ -145,7 +207,7 @@ public class Main {
                             for (Student s: c.getStudentList()){
                                 if(s.getId() == studentId){
                                     System.out.printf("The student belongs to class %s\n", c.getName());
-                                    break;
+                                    break; //stop searching more in the same class
                                 }
                             }
                         }

@@ -41,4 +41,8 @@ public class University {
     public void setClassList(List<Classes> classesList) {
         this.classesList = classesList;
     }
+
+    public void addClass(Classes classes){
+        this.classesList.add(classes);
+    }
 }
