@@ -219,8 +219,8 @@ public class Main {
     }
 
     // Part-time teachers
-    static PartTimeTeacher pt1 = new PartTimeTeacher("Jose", 1000.0, 30);
-    static PartTimeTeacher pt2 = new PartTimeTeacher("Laura", 1100.0, 25);
+    static PartTimeTeacher pt1 = new PartTimeTeacher("Jose", 700.0, 30);
+    static PartTimeTeacher pt2 = new PartTimeTeacher("Laura", 850.0, 25);
 
     // Full-time teachers
     static FullTimeTeacher ft1 = new FullTimeTeacher("Gloria", 1300.0, 10);
